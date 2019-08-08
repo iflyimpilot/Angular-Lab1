@@ -1,0 +1,14 @@
+<body>
+  <header>
+    <h1>TODO List</h1>
+    <p class="subtitle">A place to store your todos</p>
+    <button>Filter your to-dos</button>
+  </header>
+
+  <section>
+    <ol>
+      <li *ngFor="let todo of todos; index as i"></li>
+    </ol>
+  </section>
+  <button>Add your to-do</button>
+</body>
