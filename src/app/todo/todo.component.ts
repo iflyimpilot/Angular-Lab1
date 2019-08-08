@@ -7,7 +7,7 @@ import { todo } from "../interface/todo";
   styleUrls: ["./todo.component.css"]
 })
 export class TodoComponent implements OnInit {
-  toDos: list[] = [
+  toDos: todo[] = [
     { task: "Cook dinner", completed: true },
     { task: "Wash dishes", completed: true },
     { task: "Buy groceries", completed: false },

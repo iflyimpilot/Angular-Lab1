@@ -1,25 +1,28 @@
 <body>
-  <header>
-    <h1>TODO List</h1>
-    <p class="subtitle">A place to store your todos</p>
-    <button>Filter your to-dos</button>
-  </header>
+  <main>
+    <header>
+      <h1>TODO List</h1>
+      <p class="subtitle">A place to store your todos</p>
+      <button>Filter your to-dos</button>
+    </header>
+    <section>
+      <ol>
+        <li *ngFor="let todo of todos; index as i">
+          <div class="todoitem">
+            <button *ngIf="!todo.completed" class="complete_button">
+              Complete
+            </button>
+            <p [ngClass]="{ taskCompleted: todo.completed }">
+              {{ toDos.task }}
+            </p>
+            <i class="fa fa-times remove_button" (click)="removeItem(i)"></i>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-  <section>
-    <ol>
-      <li *ngFor="let todo of todos; index as i">
-        <div class="todoitem">
-          <button *ngIf="!todo.completed" class="complete_button">
-            Complete
-          </button>
-          <p [ngClass]="{ taskCompleted: todo.completed }">{{ todo.task }}</p>
-          <i class="fa fa-times remove_button" (click)="removeItem(i)"></i>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-  <section>
-    <button>Add your to-do</button>
-  </section>
+    <section>
+      <button>Add your to-do</button>
+    </section>
+  </main>
 </body>
