@@ -7,8 +7,19 @@
 
   <section>
     <ol>
-      <li *ngFor="let todo of todos; index as i"></li>
+      <li *ngFor="let todo of todos; index as i">
+        <div class="todoitem">
+          <button *ngIf="!todo.completed" class="complete_button">
+            Complete
+          </button>
+          <p [ngClass]="{ taskCompleted: todo.completed }">{{ todo.task }}</p>
+          <i class="fa fa-times remove_button" (click)="removeItem(i)"></i>
+        </div>
+      </li>
     </ol>
   </section>
-  <button>Add your to-do</button>
+
+  <section>
+    <button>Add your to-do</button>
+  </section>
 </body>
